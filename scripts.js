@@ -9,10 +9,29 @@
 */
 
 
- var substrct = function(a){
-     return function(b){
-         return a-b;
-     }
- }
- var result = substrct(6)(2);
- console.log(result);
+
+
+function Addition(num1,num2){
+    this.num1 = num1;
+    this.num2 = num2;
+  
+    Addition.prototype.sharedvalue = function(){
+        return this.num1 + this.num2;
+    };
+}
+Addition.prototype.sharedvalue = 0;
+
+ var result = new Addition(7,9);
+ console.log(result.getAddition());
+
+ var result2 = new Addition(7,9);
+ console.log(result2.getAddition());
+
+ /* Addition.prototype.sharedpropertyname =value;*/
+
+ //Addition.prototype.sharedvalue =0;
+
+
+
+
+ 
